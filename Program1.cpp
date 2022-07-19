@@ -3,17 +3,28 @@ using namespace std;
 //19 July, 2022
 
 class Swapper{
+public:
 	int x, y;
 	float a, b;
 	void swapInts(){
+		cout << "Before Swapping:" << endl;
+		cout << "x: " << x << " y: " << y << endl;
+
 		int temp = x;
 		x = y;
 		y = temp;
+		cout << "After Swapping:" << endl;
+		cout << "x: " << x << " y: " << y << endl;
+
 	}
 	void swapFloats(){
+		cout << "Before Swapping:" << endl;
+		cout << "a: " << a << " b: " << b <<endl;
 		float temp = a;
 		a = b;
 		b = temp;
+		cout << "After Swapping:" << endl;
+		cout << "a: " << a << " b: " << b << endl;
 	}
 };
 
@@ -28,7 +39,7 @@ void swap(float &a, float &b){
 	b = temp;
 }
 
-int main(){
+void simpleSwaps(){
 
 	int x = 5, y = 7, z;
 
@@ -57,7 +68,7 @@ int main(){
 			a = b;
 			b = c;
 
-			
+
 			cout << "After Swapping" << endl;
 			cout << "x: " << x << " y: " << y << endl;
 			cout << "a: " << a << " b: " << b << endl;
@@ -77,6 +88,19 @@ int main(){
 		}
 		
 	}
+}
 
+void swapUsingClass(){
+	Swapper s1;
+	s1.x = 2;
+	s1.y = 3;
+	s1.a = 10.1;
+	s1.b = 20.2;
+	s1.swapInts();
+	s1.swapFloats();
+}
+int main(){
+	// simpleSwaps();
+	swapUsingClass();
 	return 0;
 }
